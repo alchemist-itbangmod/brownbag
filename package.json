@@ -1,0 +1,33 @@
+{
+  "name": "brownbag",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://imgrbs@github.com/wipcamp/10-api.git",
+  "author": "Keerati <keerati.jear@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "start": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.273",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "reactstrap": "^6.2.0",
+    "styled-components": "^3.3.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-eslint": "^8.2.5",
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-config-standard-react": "^6.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}
