@@ -1,5 +1,6 @@
+# ignore
 .cache/
 build/
 node_modules/
 yarn-error.log
-public/render-page*
+public/render-page.js.map
