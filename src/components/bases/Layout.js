@@ -1,10 +1,12 @@
+import "bootstrap/dist/css/bootstrap.min.css"
+
 import React from "react"
+import { Container } from "reactstrap"
 
 const Layout = ({ children }) => (
-  <div>
-  Layout :D
+  <Container fluid>
     { children }
-  </div>
+  </Container>
 )
 
 export default Layout
