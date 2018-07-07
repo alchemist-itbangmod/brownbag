@@ -12,6 +12,7 @@
     "start": "gatsby serve"
   },
   "dependencies": {
+    "bootstrap": "^4.1.1",
     "gatsby": "^1.9.273",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
