@@ -1,20 +1,31 @@
 import React from "react"
-import { Row, Col } from "reactstrap"
+import styled from "styled-components"
+import { Row } from "reactstrap"
 
-const HeroColumn = ({ children }) => (
-  <Col xs={12} md={6}>
-    {children}
-  </Col>
-)
+import { COLOR } from "../bases/constant"
+import { Col } from "../bases/Layout"
+
+const HeroCol = styled(Col)`
+  min-height: 75vh;
+`
+
+const HeroOverlay = HeroCol.extend`
+  background-image: url("/static/images/IMG_3966.JPG");
+  background-attachment: fixed;
+`
+const HeroSection = HeroCol.extend`
+  margin-top: -75vh;
+  background-color: ${COLOR.primaryFade};
+  color: ${COLOR.fontPrimary};
+`
 
 const Hero = () => (
   <Row>
-    <HeroColumn>
-    Bag
-    </HeroColumn>
-    <HeroColumn>
-    BrownBag 4.0
-    </HeroColumn>
+    <HeroOverlay />
+    <HeroSection className='d-flex flex-column justify-content-center align-items-center' >
+      <h1>Brown Bag</h1>
+      <h3>The Fourth</h3>
+    </HeroSection>
   </Row>
 )
 
