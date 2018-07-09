@@ -1,5 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: `BrownBag 4.0`
+    title: "BrownBag 4.0"
   }
 }
