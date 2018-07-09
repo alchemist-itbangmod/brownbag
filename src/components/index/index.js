@@ -6,7 +6,6 @@ import Hero from "./Hero"
 import About from "./About"
 import Timetable from "./Timetable"
 import Sponsor from "./Sponsor"
-import Footer from "./Footer"
 
 const Index = () => (
   <Layout>
@@ -14,7 +13,6 @@ const Index = () => (
     <About />
     <Timetable />
     <Sponsor />
-    <Footer />
   </Layout>
 )
 
