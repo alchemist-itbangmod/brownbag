@@ -30,13 +30,13 @@ const Footer = () => (
         <Col lg='2' className='text-center'>
           <h6>Event Organizer by</h6>
           <a href='https://www.facebook.com/alchemistitbangmod/' target='_blank'>
-            <Logo src='/static/images/alchemist.png' />
+            <Logo src='static/images/alchemist.png' />
           </a>
         </Col>
         <Col lg='2' className='text-center'>
           <h5>CONNECT WITH US</h5>
           <a href='https://www.facebook.com/BrownBagSITKMUTT/' target='_blank'>
-            <Logo src='/static/images/fbicon.png' />
+            <Logo src='static/images/fbicon.png' />
           </a>
           <br />
           <a href='mailto:alchemist@sit.kmutt.ac.th'>alchemist@sit.kmutt.ac.th</a>

@@ -4,7 +4,7 @@ import { FONT_SIZE, COLOR } from "../bases/constant"
 export default () => injectGlobal`
   @font-face {
     font-family: "CSChatThai";
-    src: url("/static/fonts/CSChatThai.ttf");
+    src: url("static/fonts/CSChatThai.ttf");
   }
   html, body {
     font-family: "CSChatThai", serif !important;

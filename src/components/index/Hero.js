@@ -10,7 +10,7 @@ const HeroCol = styled(Col)`
 `
 
 const HeroOverlay = HeroCol.extend`
-  background-image: url("/static/images/IMG_3966.JPG");
+  background-image: url("static/images/IMG_3966.JPG");
   background-attachment: fixed;
 `
 const HeroSection = HeroCol.extend`
