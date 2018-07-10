@@ -35,7 +35,7 @@ const Footer = () => (
         </Col>
         <Col lg='2' className='text-center'>
           <h5>CONNECT WITH US</h5>
-          <a href='https://www.facebook.com/alchemistitbangmod/' target='_blank'>
+          <a href='https://www.facebook.com/BrownBagSITKMUTT/' target='_blank'>
             <Logo src='/static/images/fbicon.png' />
           </a>
           <br />
