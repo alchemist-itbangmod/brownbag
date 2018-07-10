@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import React, { Component, Fragment } from "react"
-import { Col as DefaultCol } from "reactstrap"
+import styled from "styled-components"
+import { Container as DefaultContainer, Col as DefaultCol } from "reactstrap"
 
 import injectGlobal from "./InjectGlobal"
 import Navbar from "./Navbar"
@@ -21,6 +22,17 @@ export default class Layout extends Component {
   }
 }
 
+const Fluid = styled(DefaultContainer)`
+  background-color: ${props => props.bgColor};
+  color: ${props => props.color};
+`
+
+Fluid.defaultProps = {
+  fluid: true,
+  bgColor: "#fff",
+  color: "#000"
+}
+
 const Col = props => <DefaultCol {...props} />
 
 Col.defaultProps = {
@@ -28,5 +40,6 @@ Col.defaultProps = {
 }
 
 export {
+  Fluid,
   Col
 }

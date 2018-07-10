@@ -4,7 +4,7 @@ import { Container } from "reactstrap"
 import { Element } from "react-scroll"
 
 import { COLOR } from "../bases/constant"
-import { Col } from "../bases/Layout"
+import { Fluid, Col } from "../bases/Layout"
 
 const sponsors = [
   "static/images/kmutt.svg",
@@ -14,10 +14,6 @@ const sponsors = [
 const Image = styled.img`
   max-width: 250px;
   max-height: 150px;
-`
-
-const SponsorContainer = styled(Container)`
-  background-color: ${COLOR.secondary};
 `
 
 const SponsorCol = styled(Col)`
@@ -39,7 +35,7 @@ SponsorList.defaultProps = {
 }
 
 const Sponsor = () => (
-  <SponsorContainer fluid>
+  <Fluid bgColor={COLOR.secondary}>
     <Container>
       <Element className='row' name='sponsor'>
         <SponsorCol>
@@ -48,7 +44,7 @@ const Sponsor = () => (
         </SponsorCol>
       </Element>
     </Container>
-  </SponsorContainer>
+  </Fluid>
 )
 
 export default Sponsor

@@ -4,7 +4,7 @@ import { Container } from "reactstrap"
 import { Element } from "react-scroll"
 
 import { COLOR, FONT_SIZE, MARGIN } from "../bases/constant"
-import { Col } from "../bases/Layout"
+import { Fluid, Col } from "../bases/Layout"
 
 const SectionImage = styled.img`
   width: 100%;
@@ -33,7 +33,7 @@ WhatCol.defaultProps = {
 }
 
 const What = () => (
-  <Container fluid>
+  <Fluid>
     <Container>
       <Element className='row py-5' name='whatis'>
         <Col className='text-center'>
@@ -55,15 +55,11 @@ const What = () => (
         </WhatCol>
       </Element>
     </Container>
-  </Container>
+  </Fluid>
 )
 
-const AboutContainer = styled(Container)`
-  background-color: ${COLOR.secondary};
-`
-
 const About = () => (
-  <AboutContainer fluid>
+  <Fluid bgColor={COLOR.secondary}>
     <Container>
       <Element className='row py-5' name='about'>
         <Col md={6} className='d-flex flex-column justify-content-center align-items-center'>
@@ -80,15 +76,14 @@ const About = () => (
         </Col>
       </Element>
     </Container>
-  </AboutContainer>
+  </Fluid>
 )
 
-const StyleContainer = styled(Container)`
-  background-color: ${COLOR.primary};
-  color: ${COLOR.fontPrimary};
-`
 const Style = () => (
-  <StyleContainer fluid>
+  <Fluid
+    bgColor={COLOR.primary}
+    color={COLOR.fontPrimary}
+  >
     <Container>
       <Element className='row py-5' name='joinwithus'>
         <Col>
@@ -101,13 +96,11 @@ const Style = () => (
         </Col>
       </Element>
     </Container>
-  </StyleContainer>
+  </Fluid>
 )
 
-const JoinContainer = styled(Container)`
-`
 const Join = () => (
-  <JoinContainer fluid>
+  <Fluid>
     <Container>
       <Element className='row py-5' name='joinwithus'>
         <Col className='text-center'>
@@ -118,7 +111,7 @@ const Join = () => (
         </Col>
       </Element>
     </Container>
-  </JoinContainer>
+  </Fluid>
 )
 
 const Information = () => (

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Container, Row } from "reactstrap"
 
 import { COLOR } from "./constant"
-import { Col } from "./Layout"
+import { Fluid, Col } from "./Layout"
 
 const LogoImage = styled.img`
   max-height: 60px;
@@ -23,7 +23,11 @@ const FooterCol = ({ children }) => (
 )
 
 const Footer = () => (
-  <FooterContainer fluid>
+  <Fluid
+    className='py-3'
+    bgColor={COLOR.primary}
+    color={COLOR.fontPrimary}
+  >
     <Container>
       <Row className='d-flex justify-content-between'>
         <FooterCol>
@@ -48,6 +52,6 @@ const Footer = () => (
         </FooterCol>
       </Row>
     </Container>
-  </FooterContainer>
+  </Fluid>
 )
 export default Footer

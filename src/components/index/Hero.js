@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { Container, Row } from "reactstrap"
+import { Row } from "reactstrap"
 
 import { COLOR } from "../bases/constant"
-import { Col } from "../bases/Layout"
+import { Fluid, Col } from "../bases/Layout"
 
 const HeroCol = styled(Col)`
   min-height: 75vh;
@@ -20,7 +20,7 @@ const HeroSection = HeroCol.extend`
 `
 
 const Hero = () => (
-  <Container fluid>
+  <Fluid>
     <Row>
       <HeroOverlay />
       <HeroSection className='d-flex flex-column justify-content-center align-items-center' >
@@ -28,7 +28,7 @@ const Hero = () => (
         <h3>The Fourth</h3>
       </HeroSection>
     </Row>
-  </Container>
+  </Fluid>
 )
 
 export default Hero

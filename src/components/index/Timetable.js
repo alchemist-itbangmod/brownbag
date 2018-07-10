@@ -4,7 +4,7 @@ import { Container, Row } from "reactstrap"
 import { Element } from "react-scroll"
 
 import { COLOR } from "../bases/constant"
-import { Col } from "../bases/Layout"
+import { Fluid, Col } from "../bases/Layout"
 
 const sessions = [
   {"time": "13:00 - 13:30", "session": "ลงทะเบียน"},
@@ -16,15 +16,11 @@ const sessions = [
   {"time": "16:10 - 16:30", "session": "สรุปงานและแลกเปลี่ยนกันตามอัธยาศัย"}
 ]
 
-const TimetbleContainer = styled(Container)`
-  background-color: ${COLOR.normal};
-`
-TimetbleContainer.defaultProps = {
-  className: "py-5"
-}
-
 const Timetable = () => (
-  <TimetbleContainer fluid>
+  <Fluid
+    bgColor={COLOR.bg}
+    className='py-5'
+  >
     <Container >
       <Element className='row' name='timetable'>
         <Col className='text-center'>
@@ -39,7 +35,7 @@ const Timetable = () => (
         </Col>
       </Element>
     </Container>
-  </TimetbleContainer>
+  </Fluid>
 )
 
 export default Timetable
