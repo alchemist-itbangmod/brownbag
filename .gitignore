@@ -3,4 +3,5 @@
 build/
 node_modules/
 yarn-error.log
-public/render-page.js.map
+public/*
+!public/static/*
