@@ -1,4 +1,5 @@
 import React from "react"
+import { siteMetadata } from "../gatsby-config"
 
 let stylesStr
 if (process.env.NODE_ENV === "production") {
@@ -11,6 +12,10 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = class HTML extends React.Component {
   render () {
+    let {
+      title,
+      description
+    } = siteMetadata
     let css
     if (process.env.NODE_ENV === "production") {
       css = (
@@ -24,12 +29,16 @@ module.exports = class HTML extends React.Component {
     return (
       <html {...this.props.htmlAttributes}>
         <head>
+          <title>{title}</title>
+          <meta name='description' content={description} />
+
           <meta charSet='utf-8' />
           <meta httpEquiv='x-ua-compatible' content='ie=edge' />
           <meta
             name='viewport'
             content='width=device-width, initial-scale=1, shrink-to-fit=no'
           />
+
           <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet' />
           {this.props.headComponents}
           {css}
