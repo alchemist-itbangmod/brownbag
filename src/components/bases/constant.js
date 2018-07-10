@@ -1,20 +1,25 @@
 const FONT_SIZE = {
   small: "0.7em",
   normal: "1.4em",
-  large: "2em",
-  header: "3em",
-  subheader: "2.5em"
+  large: "1.8em",
+  header: "2.4em",
+  hero: "3em",
+  subheader: "2em"
 }
 
 const COLOR = {
   primary: "rgb(74,44,44)",
   primaryFade: "rgba(74, 44, 44, 0.65)",
-  fontPrimary: "#fff"
+  secondary: "#ffdc76",
+  normal: "#fefea4",
+  highlight: "#d3504a",
+  fontPrimary: "#fff",
+  headerBorder: "#000"
 }
 
 const MARGIN = {
-  small: "1em",
-  normal: "3em",
+  small: "0.5em",
+  normal: "1em",
   large: "5em"
 }
 
