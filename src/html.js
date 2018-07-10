@@ -14,7 +14,14 @@ module.exports = class HTML extends React.Component {
   render () {
     let {
       title,
-      description
+      description,
+      favicon,
+      keywords,
+      ogTitle,
+      ogType,
+      url,
+      ogImage,
+      siteName
     } = siteMetadata
     let css
     if (process.env.NODE_ENV === "production") {
@@ -29,16 +36,21 @@ module.exports = class HTML extends React.Component {
     return (
       <html {...this.props.htmlAttributes}>
         <head>
-          <title>{title}</title>
-          <meta name='description' content={description} />
-
           <meta charSet='utf-8' />
-          <meta httpEquiv='x-ua-compatible' content='ie=edge' />
           <meta
             name='viewport'
             content='width=device-width, initial-scale=1, shrink-to-fit=no'
           />
 
+          <title>{title}</title>
+          <meta name='description' content={description} />
+          <link rel='icon' href={favicon} />
+          <meta name='keywords' content={keywords} />
+          <meta property='og:title' content={ogTitle} />
+          <meta property='og:type' content={ogType} />
+          <meta property='og:url' content={url} />
+          <meta property='og:image' content={ogImage} />
+          <meta property='og:site_name' content={siteName} />
           <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet' />
           {this.props.headComponents}
           {css}
