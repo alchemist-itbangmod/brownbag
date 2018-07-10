@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react"
+import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Nav as DefaultNav, NavItem } from "reactstrap"
 import { Link as DefaultLink } from "react-scroll"
@@ -56,14 +56,10 @@ NavList.defaultProps = {
   menus
 }
 
-class Navbar extends Component {
-  render () {
-    return (
-      <Nav>
-        <NavList />
-      </Nav>
-    )
-  }
-}
+const Navbar = () => (
+  <Nav>
+    <NavList />
+  </Nav>
+)
 
 export default Navbar
