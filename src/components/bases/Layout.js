@@ -1,18 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import React, { Component, Fragment } from "react"
-import { Container, Col as DefaultCol } from "reactstrap"
+import { Col as DefaultCol } from "reactstrap"
 
 import injectGlobal from "./InjectGlobal"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 export default class Layout extends Component {
-  componentWillMount = async () => {
-    injectGlobal()
-  }
-
   render () {
+    injectGlobal()
     const { children } = this.props
     return (
       <Fragment>
