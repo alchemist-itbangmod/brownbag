@@ -17,9 +17,7 @@ export default class Layout extends Component {
     return (
       <Fragment>
         <Navbar />
-        <Container fluid>
-          { children }
-        </Container>
+        { children }
         <Footer />
       </Fragment>
     )

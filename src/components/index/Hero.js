@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Row } from "reactstrap"
+import { Container, Row } from "reactstrap"
 
 import { COLOR } from "../bases/constant"
 import { Col } from "../bases/Layout"
@@ -20,13 +20,15 @@ const HeroSection = HeroCol.extend`
 `
 
 const Hero = () => (
-  <Row>
-    <HeroOverlay />
-    <HeroSection className='d-flex flex-column justify-content-center align-items-center' >
-      <h1>Brown Bag</h1>
-      <h3>The Fourth</h3>
-    </HeroSection>
-  </Row>
+  <Container fluid>
+    <Row>
+      <HeroOverlay />
+      <HeroSection className='d-flex flex-column justify-content-center align-items-center' >
+        <h1>Brown Bag</h1>
+        <h3>The Fourth</h3>
+      </HeroSection>
+    </Row>
+  </Container>
 )
 
 export default Hero
