@@ -9,12 +9,14 @@ export default () => injectGlobal`
   html, body {
     font-family: "CSChatThai", serif !important;
     font-size: 18px;
+    overflow-x: hidden;
   }
 
   h1 {
     font-size: ${FONT_SIZE.header}
   }
   p {
+    text-indent: 1.5em;
     font-size: ${FONT_SIZE.normal}
   }
 `
