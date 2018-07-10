@@ -5,42 +5,47 @@ import { Container, Row } from "reactstrap"
 import { COLOR } from "./constant"
 import { Col } from "./Layout"
 
-const Logo = styled.img`
+const LogoImage = styled.img`
   max-height: 60px;
   cursor: pointer;
 `
 
-const FooterContainer = styled(Container)`
-  background-color: ${COLOR.primary};
-  color: ${COLOR.fontPrimary};
-`
+const Logo = ({ href, src }) => (
+  <a href={href} target='_blank'>
+    <LogoImage src={src} />
+  </a>
+)
 
-FooterContainer.defaultProps = {
-  className: "py-4"
-}
+const FooterCol = ({ children }) => (
+  <Col lg='2' className='text-center py-3'>
+    { children }
+  </Col>
+)
 
 const Footer = () => (
   <FooterContainer fluid>
     <Container>
       <Row className='d-flex justify-content-between'>
-        <Col lg='2' className='text-center'>
+        <FooterCol>
           <h4>Brown Bag</h4>
           <h6>The Fourth</h6>
-        </Col>
-        <Col lg='2' className='text-center'>
+        </FooterCol>
+        <FooterCol>
           <h6>Event Organizer by</h6>
-          <a href='https://www.facebook.com/alchemistitbangmod/' target='_blank'>
-            <Logo src='static/images/alchemist.png' />
-          </a>
-        </Col>
-        <Col lg='2' className='text-center'>
+          <Logo
+            href='https://www.facebook.com/alchemistitbangmod/'
+            src='static/images/alchemist.png'
+          />
+        </FooterCol>
+        <FooterCol>
           <h5>CONNECT WITH US</h5>
-          <a href='https://www.facebook.com/BrownBagSITKMUTT/' target='_blank'>
-            <Logo src='static/images/fbicon.png' />
-          </a>
+          <Logo
+            href='https://www.facebook.com/BrownBagSITKMUTT/'
+            src='static/images/fbicon.png'
+          />
           <br />
           <a href='mailto:alchemist@sit.kmutt.ac.th'>alchemist@sit.kmutt.ac.th</a>
-        </Col>
+        </FooterCol>
       </Row>
     </Container>
   </FooterContainer>
