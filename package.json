@@ -8,8 +8,9 @@
   "private": false,
   "scripts": {
     "dev": "gatsby develop",
-    "build": "gatsby build",
-    "start": "gatsby serve"
+    "build": "NODE_ENV=production gatsby build",
+    "start": "gatsby serve",
+    "deploy": "NODE_ENV=production gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
@@ -30,6 +31,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "gh-pages": "^1.2.0"
   }
 }
