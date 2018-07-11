@@ -9,8 +9,11 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 export default class Layout extends Component {
-  render () {
+  componentDidMount = () => {
     injectGlobal()
+  }
+
+  render () {
     const { children } = this.props
     return (
       <Fragment>
