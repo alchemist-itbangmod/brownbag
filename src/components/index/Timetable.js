@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
-import { Container } from "reactstrap"
+import { Row } from "reactstrap"
 import { Element } from "react-scroll"
 
 import { FONT_SIZE, COLOR, PADDING, MARGIN, FLEX } from "../bases/constant"
@@ -18,15 +18,38 @@ const sessions = [
   {"time": "16:10 - 17:00", "session": "Closing Ceremony"}
 ]
 
-const Session = styled.div`
+const SessionRow = styled(Row)`
+  background-color: ${COLOR.primaryFade};
+  font-size: ${FONT_SIZE.normal};
+  padding: ${PADDING.small};
+  margin-bottom: ${MARGIN.normal};
+  width: 100%;
 
+  @media (min-width: 1024px) {
+    width: 50vw;
+  }
 `
+
+const SessionCard = ({session, time}) => (
+  <SessionRow>
+    <Col lg={3}>
+      {time}
+    </Col>
+    <Col lg={9}>
+      {session}
+    </Col>
+  </SessionRow>
+)
 
 const SessionList = ({ sessions }) => (
   <Fragment>
     {
       sessions.map(({session, time}) => (
-        <Session key={`${time}${session}`}>{`${time} ${session}`}</Session>
+        <SessionCard
+          key={`${time}${session}`}
+          session={session}
+          time={time}
+        />
       ))
     }
   </Fragment>
@@ -36,12 +59,34 @@ SessionList.defaultProps = {
   sessions
 }
 
+const TimetableContainer = styled(Fluid)`
+  background-image: url('static/images/IMG_3952.JPG');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top left;
+
+  @media (max-width: 667px) {
+    background-position: 40%;
+  }
+
+  h1 {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  h1, div {
+    color: ${COLOR.fontPrimary};
+  }
+`
+
+TimetableContainer.defaultProps = {
+  className: "px-0"
+}
+
 const Timetable = () => (
-  <Fluid
-    bgcolor={COLOR.bg}
-    className='py-5'
-  >
-    <Container >
+  <TimetableContainer>
+    <Fluid
+      bgcolor={COLOR.primaryFade}
+      className='py-5'
+    >
       <Element className='row' name='timetable'>
         <Col className='text-center'>
           <h1>Timetable</h1>
@@ -50,8 +95,8 @@ const Timetable = () => (
           <SessionList />
         </Col>
       </Element>
-    </Container>
-  </Fluid>
+    </Fluid>
+  </TimetableContainer>
 )
 
 export default Timetable
