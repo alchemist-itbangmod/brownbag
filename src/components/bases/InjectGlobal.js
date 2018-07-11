@@ -14,6 +14,7 @@ export default () => injectGlobal`
 
   h1 {
     font-size: ${FONT_SIZE.header};
+    font-weight: bold;
   }
   p {
     text-indent: 1.5em;
