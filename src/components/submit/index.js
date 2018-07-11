@@ -1,6 +1,11 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import { Container, Row } from "reactstrap"
 
+import { auth, provider } from "../../tools/firebaseHelper"
+
+import Login from "./Login"
+import SpeakerForm from "./SpeakerForm"
 import Layout from "../bases/Layout"
 import { FONT_SIZE, FLEX, COLOR } from "../bases/constant"
 
@@ -21,12 +26,44 @@ const SubmitSection = styled.div`
 `
 
 export default class Submit extends Component {
+  state = {
+    user: null,
+    topic: null
+  }
+  componentWillMount = async () => {
+    const user = await JSON.parse(window.localStorage.getItem("user"))
+    console.log(user)
+    if (user) {
+      this.setState({ user })
+    }
+  }
+
+  login = () => {
+    auth().signInWithPopup(provider)
+      .then(({ user }) => {
+        window.localStorage.setItem("user", JSON.stringify(user))
+        this.setState({ user })
+      })
+  }
+
+  logout = () => {
+    auth().signOut().then(() => {
+      window.localStorage.clear()
+      this.setState({ user: null })
+    })
+  }
+
   render () {
+    const { user } = this.state
     return (
       <Layout>
         <SubmitOverlay />
-        <SubmitSection className={FLEX.center}>
-          ยังไม่เปิดรับ Topic
+        <SubmitSection className={`py-5 ${FLEX.center}`}>
+          <Container>
+            <Row className='py-5'>
+              { !user ? <Login login={this.login} /> : <SpeakerForm /> }
+            </Row>
+          </Container>
         </SubmitSection>
       </Layout>
     )
