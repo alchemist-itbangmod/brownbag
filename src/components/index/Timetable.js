@@ -1,6 +1,6 @@
-import React from "react"
+import React, { Fragment } from "react"
 import styled from "styled-components"
-import { Container, Row } from "reactstrap"
+import { Container } from "reactstrap"
 import { Element } from "react-scroll"
 
 import { COLOR } from "../bases/constant"
@@ -18,6 +18,24 @@ const sessions = [
   {"time": "16:10 - 17:00", "session": "Closing Ceremony"}
 ]
 
+const Session = styled.div`
+
+`
+
+const SessionList = ({ sessions }) => (
+  <Fragment>
+    {
+      sessions.map(({session, time}) => (
+        <Session key={`${time}${session}`}>{`${time} ${session}`}</Session>
+      ))
+    }
+  </Fragment>
+)
+
+SessionList.defaultProps = {
+  sessions
+}
+
 const Timetable = () => (
   <Fluid
     bgColor={COLOR.bg}
@@ -29,11 +47,7 @@ const Timetable = () => (
           <h1>Timetable</h1>
         </Col>
         <Col>
-          <span>
-            {
-              sessions.map(({session, time}) => <div key={`${time}${session}`}>{`${time} ${session}`}</div>)
-            }
-          </span>
+          <SessionList />
         </Col>
       </Element>
     </Container>
