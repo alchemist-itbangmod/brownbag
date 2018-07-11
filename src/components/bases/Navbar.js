@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import {
   Nav as DefaultNav,
   Navbar as DefaultNavbar,
-  NavItem as DefaultNavItem,
+  NavItem,
   NavbarToggler,
   Collapse
 } from "reactstrap"
@@ -36,7 +36,9 @@ const Link = styled(DefaultLink)`
 `
 
 const Toggler = styled(NavbarToggler)`
-    border-color: ${COLOR.fontPrimary};
+  border-color: ${COLOR.fontPrimary} !important;
+  color: ${COLOR.fontPrimary} !important;
+  fill: ${COLOR.fontPrimary} !important;
 `
 
 Link.defaultProps = {
@@ -47,7 +49,7 @@ const NavList = ({ menus }) => (
   <Fragment>
     {
       menus.map(({name, link}) =>
-        <DefaultNavItem key={`nav-item-${name}-${link}`}>
+        <NavItem key={`nav-item-${name}-${link}`}>
           <Link
             to={link}
             activeClass='active'
@@ -58,7 +60,7 @@ const NavList = ({ menus }) => (
           >
             {name}
           </Link>
-        </DefaultNavItem>
+        </NavItem>
       )
     }
   </Fragment>
@@ -91,11 +93,11 @@ export default class CustomNavbar extends Component {
   }
   render () {
     return (
-      <Navbar light expand='md' className='fixed-top'>
+      <Navbar dark expand='md' className='fixed-top'>
         <Brand>BrownBag</Brand>
         <Toggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav navbar>
+          <Nav className='ml-auto' navbar>
             <NavList />
           </Nav>
         </Collapse>
