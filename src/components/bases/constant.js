@@ -1,3 +1,7 @@
+const FLEX = {
+  center: "d-flex flex-column justify-content-center align-items-center"
+}
+
 const FONT_SIZE = {
   small: "0.7em",
   normal: "1.4em",
@@ -26,6 +30,7 @@ const MARGIN = {
 const PADDING = MARGIN
 
 export {
+  FLEX,
   FONT_SIZE,
   COLOR,
   MARGIN,
