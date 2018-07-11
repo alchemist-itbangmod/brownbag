@@ -2,9 +2,14 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import React, { Component, Fragment } from "react"
 import styled from "styled-components"
-import { Container as DefaultContainer, Col as DefaultCol } from "reactstrap"
+import {
+  Container as DefaultContainer,
+  Col as DefaultCol,
+  Card as DefaultCard
+} from "reactstrap"
 
 import injectGlobal from "./InjectGlobal"
+import { COLOR } from "./constant"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
@@ -42,7 +47,20 @@ Col.defaultProps = {
   xs: "12"
 }
 
+const Card = styled(DefaultCard)`
+  color: ${COLOR.highlight};
+`
+
+const CardSubmit = ({ children, size, offset }) => (
+  <Col md={{ size, offset }}>
+    <Card>
+      {children}
+    </Card>
+  </Col>
+)
+
 export {
   Fluid,
-  Col
+  Col,
+  CardSubmit
 }

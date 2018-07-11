@@ -9,19 +9,11 @@ import SpeakerForm from "./SpeakerForm"
 import Layout from "../bases/Layout"
 import { FONT_SIZE, FLEX, COLOR } from "../bases/constant"
 
-const heightSize = "85vh"
-
-const SubmitOverlay = styled.div`
-  background: url('static/images/IMG_3967.JPG');
-  min-height: ${heightSize};
-`
-
 const SubmitSection = styled.div`
   font-size: ${FONT_SIZE.hero};
   background: ${COLOR.primaryFade};
   color: ${COLOR.fontPrimary};
-  min-height: ${heightSize};
-  margin-top: -${heightSize};
+  min-height: 85vh;
 
 `
 
@@ -53,11 +45,17 @@ export default class Submit extends Component {
     })
   }
 
+  handleSubmit = () => {
+
+  }
+
+  submit = () => {
+
+  }
   render () {
     const { user } = this.state
     return (
       <Layout>
-        <SubmitOverlay />
         <SubmitSection className={`py-5 ${FLEX.center}`}>
           <Container>
             <Row className='py-5'>

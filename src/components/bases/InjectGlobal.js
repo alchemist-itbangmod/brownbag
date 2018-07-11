@@ -11,6 +11,11 @@ export default () => injectGlobal`
     font-size: 18px;
     overflow-x: hidden;
   }
+  body {
+    background: url('static/images/IMG_3917.JPG');
+    background-size: cover;
+    background-attachment: fixed;
+  }
 
   h1 {
     font-size: ${FONT_SIZE.header};
