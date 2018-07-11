@@ -1,6 +1,14 @@
-import React, { Fragment } from "react"
+import React, { Component, Fragment } from "react"
+import {
+  Nav as DefaultNav,
+  Navbar as DefaultNavbar,
+  NavItem,
+  NavbarToggler,
+  Collapse
+} from "reactstrap"
+
 import styled from "styled-components"
-import { Nav as DefaultNav, NavItem } from "reactstrap"
+import LinkPage from "gatsby-link"
 import { Link as DefaultLink } from "react-scroll"
 
 import { COLOR, FONT_SIZE } from "../bases/constant"
@@ -13,18 +21,22 @@ const menus = [
   {name: "Sponsor", link: "sponsor"}
 ]
 
-const Nav = styled(DefaultNav)`
-  font-size: ${FONT_SIZE.normal};
-  color: ${COLOR.fontPrimary};
-  background-color: ${COLOR.primary};
+const Brand = styled(LinkPage)`
+  font-size: ${FONT_SIZE.large};
+  color: ${COLOR.fontPrimary} !important;
 `
 
-Nav.defaultProps = {
-  className: "sticky-top navbar-expand-lg py-2 px-3 justify-content-center"
+Brand.defaultProps = {
+  className: "navbar-brand",
+  to: "/"
 }
 
 const Link = styled(DefaultLink)`
   cursor: pointer;
+`
+
+const Toggler = styled(NavbarToggler)`
+  border-color: ${COLOR.fontPrimary} !important;
 `
 
 Link.defaultProps = {
@@ -42,7 +54,7 @@ const NavList = ({ menus }) => (
             spy
             smooth
             duration={700}
-            // onSetActive={this.handleSetActive}
+            offset={-40}
           >
             {name}
           </Link>
@@ -56,10 +68,38 @@ NavList.defaultProps = {
   menus
 }
 
-const Navbar = () => (
-  <Nav>
-    <NavList />
-  </Nav>
-)
+const Nav = styled(DefaultNav)`
+  font-size: ${FONT_SIZE.normal};
+  color: ${COLOR.fontPrimary};
+  background-color: ${COLOR.primary};
+`
 
-export default Navbar
+const Navbar = styled(DefaultNavbar)`
+  color: ${COLOR.fontPrimary};
+  background-color: ${COLOR.primary};
+`
+
+export default class CustomNavbar extends Component {
+  state = {
+    isOpen: false
+  }
+
+  toggle = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+  render () {
+    return (
+      <Navbar dark expand='md' className='fixed-top'>
+        <Brand>BrownBag</Brand>
+        <Toggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className='ml-auto' navbar>
+            <NavList />
+          </Nav>
+        </Collapse>
+      </Navbar>
+    )
+  }
+}

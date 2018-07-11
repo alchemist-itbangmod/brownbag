@@ -11,6 +11,10 @@ const HeroCol = styled(Col)`
   min-height: 75vh;
 `
 
+const HeroFluid = styled(Fluid)`
+  padding-top: 8vh;
+`
+
 const HeroOverlay = HeroCol.extend`
   background-image: url("static/images/IMG_3966.JPG");
   background-attachment: fixed;
@@ -40,7 +44,7 @@ const Description = ({ children }) => (
 )
 
 const Hero = () => (
-  <Fluid>
+  <HeroFluid>
     <Row>
       <HeroOverlay />
       <HeroSection className={FLEX.center} >
@@ -54,7 +58,7 @@ const Hero = () => (
         </Link>
       </HeroSection>
     </Row>
-  </Fluid>
+  </HeroFluid>
 )
 
 export default Hero
