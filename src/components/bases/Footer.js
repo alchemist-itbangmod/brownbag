@@ -25,7 +25,7 @@ const FooterCol = ({ children }) => (
 const Footer = () => (
   <Fluid
     className='py-3'
-    bgColor={COLOR.primary}
+    bgcolor={COLOR.primary}
     color={COLOR.fontPrimary}
   >
     <Container>

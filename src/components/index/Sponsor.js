@@ -35,7 +35,7 @@ SponsorList.defaultProps = {
 }
 
 const Sponsor = () => (
-  <Fluid bgColor={COLOR.secondary}>
+  <Fluid bgcolor={COLOR.secondary}>
     <Container>
       <Element className='row' name='sponsor'>
         <SponsorCol>

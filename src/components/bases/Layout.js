@@ -23,13 +23,13 @@ export default class Layout extends Component {
 }
 
 const Fluid = styled(DefaultContainer)`
-  background-color: ${props => props.bgColor};
+  background-color: ${props => props.bgcolor};
   color: ${props => props.color};
 `
 
 Fluid.defaultProps = {
   fluid: true,
-  bgColor: "#fff",
+  bgcolor: "#fff",
   color: "#000"
 }
 

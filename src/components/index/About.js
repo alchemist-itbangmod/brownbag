@@ -59,7 +59,7 @@ const What = () => (
 )
 
 const About = () => (
-  <Fluid bgColor={COLOR.secondary}>
+  <Fluid bgcolor={COLOR.secondary}>
     <Container>
       <Element className='row py-5' name='about'>
         <Col md={6} className='d-flex flex-column justify-content-center align-items-center'>
@@ -81,7 +81,7 @@ const About = () => (
 
 const Style = () => (
   <Fluid
-    bgColor={COLOR.primary}
+    bgcolor={COLOR.primary}
     color={COLOR.fontPrimary}
   >
     <Container>

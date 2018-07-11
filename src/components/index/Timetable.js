@@ -38,7 +38,7 @@ SessionList.defaultProps = {
 
 const Timetable = () => (
   <Fluid
-    bgColor={COLOR.bg}
+    bgcolor={COLOR.bg}
     className='py-5'
   >
     <Container >
