@@ -37,8 +37,6 @@ const Link = styled(DefaultLink)`
 
 const Toggler = styled(NavbarToggler)`
   border-color: ${COLOR.fontPrimary} !important;
-  color: ${COLOR.fontPrimary} !important;
-  fill: ${COLOR.fontPrimary} !important;
 `
 
 Link.defaultProps = {
