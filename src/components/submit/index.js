@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import { Container, Row } from "reactstrap"
 
+import windowChecker from "../../tools/windowChecker"
 import { auth, provider } from "../../tools/firebaseHelper"
 
 import Login from "./Login"
@@ -22,8 +23,8 @@ export default class Submit extends Component {
     user: null,
     topic: null
   }
-  componentWillMount = async () => {
-    const user = await JSON.parse(window.localStorage.getItem("user"))
+  componentWillMount = () => {
+    const user = windowChecker() && JSON.parse(window.localStorage.getItem("user"))
     console.log(user)
     if (user) {
       this.setState({ user })
@@ -33,7 +34,7 @@ export default class Submit extends Component {
   login = () => {
     auth().signInWithPopup(provider)
       .then(({ user }) => {
-        window.localStorage.setItem("user", JSON.stringify(user))
+        windowChecker() && window.localStorage.setItem("user", JSON.stringify(user))
         this.setState({ user })
       })
   }
