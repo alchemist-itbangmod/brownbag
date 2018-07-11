@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 import styled from "styled-components"
 import { Container } from "reactstrap"
 import { Element } from "react-scroll"
+import Link from 'gatsby-link'
 
 import { COLOR, FONT_SIZE, MARGIN, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
@@ -112,7 +113,9 @@ const Join = () => (
           <h1>อยากแชร์ประสบการณ์ภายในงานต้องทำอย่างไร?</h1>
           <JoinContent>
             <span>กรอกแบบฟอร์มมาได้เลยครับ</span> <br />
-            <Button>Submit Topic!</Button> <br />
+            <Link to='/submit'>
+              <Button>Submit Topic</Button>
+            </Link> <br />
             <span>หมายเหตุ : รายละเอียดและข้อกำหนด ดูภายในฟอร์ม</span>
           </JoinContent>
         </Col>

@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Row } from "reactstrap"
+import Link from "gatsby-link"
 
 import { COLOR, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
@@ -29,7 +30,9 @@ const Hero = () => (
         <h1>Brown Bag</h1>
         <h3>The Fourth</h3>
         <h5>" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag The Fourth "</h5>
-        <Button>Submit Topic</Button>
+        <Link to='/submit'>
+          <Button>Submit Topic</Button>
+        </Link>
       </HeroSection>
     </Row>
   </Fluid>
