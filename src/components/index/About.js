@@ -5,6 +5,7 @@ import { Element } from "react-scroll"
 
 import { COLOR, FONT_SIZE, MARGIN, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
+import Button from "../bases/Button"
 
 const SectionImage = styled.img`
   width: 100%;
@@ -99,15 +100,21 @@ const Style = () => (
   </Fluid>
 )
 
+const JoinContent = styled.p`
+  text-indent: 0px;
+`
+
 const Join = () => (
   <Fluid>
     <Container>
       <Element className='row py-5' name='joinwithus'>
         <Col className='text-center'>
           <h1>อยากแชร์ประสบการณ์ภายในงานต้องทำอย่างไร?</h1>
-          <p>
-            กรอกแบบฟอร์มมาได้เลยครับ <button>Click!</button> แต่จะมีข้อกำหนดสำหรับหัวข้อที่จะแชร์ภายในงานสักเล็กน้อยนะครับ
-          </p>
+          <JoinContent>
+            <span>กรอกแบบฟอร์มมาได้เลยครับ</span> <br />
+            <Button>Submit Topic!</Button> <br />
+            <span>หมายเหตุ : รายละเอียดและข้อกำหนด ดูภายในฟอร์ม</span>
+          </JoinContent>
         </Col>
       </Element>
     </Container>
