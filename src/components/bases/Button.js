@@ -23,7 +23,13 @@ const ButtonPrimary = styled(Button)`
   }
 `
 
+const ButtonPrimaryInverted = styled(ButtonPrimary)`
+  background-color: ${COLOR.highlight} !important;
+  color: ${COLOR.fontPrimary} !important;
+  border: 3px solid ${COLOR.highlight} !important;
+`
+
 export default ButtonPrimary
 export {
-  Button
+  ButtonPrimaryInverted
 }

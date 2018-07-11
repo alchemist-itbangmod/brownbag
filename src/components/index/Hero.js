@@ -4,6 +4,7 @@ import { Row } from "reactstrap"
 
 import { COLOR, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
+import { ButtonPrimaryInverted as Button } from "../bases/Button"
 
 const HeroCol = styled(Col)`
   min-height: 75vh;
@@ -27,6 +28,8 @@ const Hero = () => (
       <HeroSection className={FLEX.center} >
         <h1>Brown Bag</h1>
         <h3>The Fourth</h3>
+        <h5>" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag The Fourth "</h5>
+        <Button>Submit Topic</Button>
       </HeroSection>
     </Row>
   </Fluid>
