@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Row } from "reactstrap"
 import Link from "gatsby-link"
 
-import { COLOR, FLEX } from "../bases/constant"
+import { COLOR, FLEX, FONT_SIZE } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
 import { ButtonPrimaryInverted as Button } from "../bases/Button"
 
@@ -14,6 +14,8 @@ const HeroCol = styled(Col)`
 const HeroOverlay = HeroCol.extend`
   background-image: url("static/images/IMG_3966.JPG");
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 `
 
 const HeroSection = HeroCol.extend`
@@ -22,14 +24,27 @@ const HeroSection = HeroCol.extend`
   color: ${COLOR.fontPrimary};
 `
 
+const HeaderHero = styled.h1`
+  font-size: ${FONT_SIZE.hero};
+  margin-bottom: 0;
+`
+
+const SubHeaderHero = styled.h3`
+  font-size: ${FONT_SIZE.header};
+  margin-top: 0;
+  margin-bottom: 1em;
+`
+
 const Hero = () => (
   <Fluid>
     <Row>
       <HeroOverlay />
       <HeroSection className={FLEX.center} >
-        <h1>Brown Bag</h1>
-        <h3>The Fourth</h3>
-        <h5>" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag The Fourth "</h5>
+        <HeaderHero>Brown Bag</HeaderHero>
+        <SubHeaderHero>The Fourth</SubHeaderHero>
+        <h4><strong>7 August 2018, 13.00 PM - 17.00 PM</strong></h4>
+        <h4><strong>SIT Building ( Train 1 - 5 ) , KMUTT</strong></h4>
+        <h5 className='mt-4 text-center'>" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag The Fourth "</h5>
         <Link to='/submit'>
           <Button>Submit Topic</Button>
         </Link>
