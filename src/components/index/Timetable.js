@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Container } from "reactstrap"
 import { Element } from "react-scroll"
 
-import { COLOR } from "../bases/constant"
+import { FONT_SIZE, COLOR, PADDING, MARGIN, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
 
 const sessions = [
@@ -46,7 +46,7 @@ const Timetable = () => (
         <Col className='text-center'>
           <h1>Timetable</h1>
         </Col>
-        <Col>
+        <Col className={FLEX.center}>
           <SessionList />
         </Col>
       </Element>

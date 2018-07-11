@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Container } from "reactstrap"
 import { Element } from "react-scroll"
 
-import { COLOR } from "../bases/constant"
+import { COLOR, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
 
 const sponsors = [
@@ -15,12 +15,6 @@ const Image = styled.img`
   max-width: 250px;
   max-height: 150px;
 `
-
-const SponsorCol = styled(Col)`
-`
-SponsorCol.defaultProps = {
-  className: "py-5 d-flex flex-column justify-content-center align-items-center"
-}
 
 const SponsorList = ({ sponsors }) => (
   <Fragment>
@@ -38,10 +32,10 @@ const Sponsor = () => (
   <Fluid bgcolor={COLOR.secondary}>
     <Container>
       <Element className='row' name='sponsor'>
-        <SponsorCol>
+        <Col className={`py-5 ${FLEX.center}`}>
           <h1>Sponsor</h1>
           <SponsorList />
-        </SponsorCol>
+        </Col>
       </Element>
     </Container>
   </Fluid>

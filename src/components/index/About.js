@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Container } from "reactstrap"
 import { Element } from "react-scroll"
 
-import { COLOR, FONT_SIZE, MARGIN } from "../bases/constant"
+import { COLOR, FONT_SIZE, MARGIN, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
 
 const SectionImage = styled.img`
@@ -29,7 +29,7 @@ const WhatCol = styled(Col)`
   }
 `
 WhatCol.defaultProps = {
-  className: "px-5 d-flex flex-column justify-content-center"
+  className: `px-5 ${FLEX.center}`
 }
 
 const What = () => (
@@ -62,7 +62,7 @@ const About = () => (
   <Fluid bgcolor={COLOR.secondary}>
     <Container>
       <Element className='row py-5' name='about'>
-        <Col md={6} className='d-flex flex-column justify-content-center align-items-center'>
+        <Col md={6} className={FLEX.center}>
           <h1>Brown Bag มาจากไหน?</h1>
           <p>
           Brown Bag มาจากปกติแล้วคนอเมริกาชอบใช้เจ้า ถุงน้ำตาล นี่แหละ เป็นพวกใส่อาหารสำเร็จรูป ที่หาได้จาก Supermarket หรือ
