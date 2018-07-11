@@ -54,6 +54,7 @@ const NavList = ({ menus }) => (
             spy
             smooth
             duration={700}
+            offset={-40}
           >
             {name}
           </Link>
