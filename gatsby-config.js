@@ -11,5 +11,6 @@ module.exports = {
     ogImage: "static/images/og.png",
     siteName: "BrownBag 4.0"
   },
-  pathPrefix: "/brownbag"
+  pathPrefix: "/brownbag",
+  plugins: ["gatsby-plugin-styled-components"]
 }

@@ -14,9 +14,12 @@
     "deploy-github": "NODE_ENV=production gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
     "bootstrap": "^4.1.1",
+    "firebase": "^5.2.0",
     "gatsby": "^1.9.273",
     "gatsby-link": "^1.6.45",
+    "gatsby-plugin-styled-components": "^2.0.11",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scroll": "^1.7.10",
