@@ -3,6 +3,7 @@ const FLEX = {
 }
 
 const FONT_SIZE = {
+  mini: "0.4em",
   small: "0.7em",
   normal: "1.4em",
   large: "1.8em",
@@ -19,7 +20,8 @@ const COLOR = {
   highlight: "#d3504a",
   highlightLighter: "#f9b1ae",
   fontPrimary: "#fff",
-  headerBorder: "#000"
+  headerBorder: "#000",
+  facebook: "#4860ac"
 }
 
 const MARGIN = {
