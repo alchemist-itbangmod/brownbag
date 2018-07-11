@@ -1,5 +1,5 @@
 import { injectGlobal } from "styled-components"
-import { FONT_SIZE, COLOR } from "../bases/constant"
+import { FONT_SIZE, COLOR } from "./constant"
 
 export default () => injectGlobal`
   @font-face {
