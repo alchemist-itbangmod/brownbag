@@ -35,6 +35,10 @@ const SubHeaderHero = styled.h3`
   margin-bottom: 1em;
 `
 
+const Description = ({ children }) => (
+  <h4><strong>{children}</strong></h4>
+)
+
 const Hero = () => (
   <Fluid>
     <Row>
@@ -42,8 +46,8 @@ const Hero = () => (
       <HeroSection className={FLEX.center} >
         <HeaderHero>Brown Bag</HeaderHero>
         <SubHeaderHero>The Fourth</SubHeaderHero>
-        <h4><strong>7 August 2018, 13.00 PM - 17.00 PM</strong></h4>
-        <h4><strong>SIT Building ( Train 1 - 5 ) , KMUTT</strong></h4>
+        <Description>7 August 2018, 13.00 PM - 17.00 PM</Description>
+        <Description>SIT Building ( Train 1 - 5 ) , KMUTT</Description>
         <h5 className='mt-4 text-center'>" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag The Fourth "</h5>
         <Link to='/submit'>
           <Button>Submit Topic</Button>
