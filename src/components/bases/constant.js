@@ -17,6 +17,7 @@ const COLOR = {
   secondary: "#ffdc76",
   normal: "#fff0b6",
   highlight: "#d3504a",
+  highlightLighter: "#f9b1ae",
   fontPrimary: "#fff",
   headerBorder: "#000"
 }
