@@ -10,7 +10,8 @@
     "dev": "gatsby develop",
     "build": "NODE_ENV=production gatsby build",
     "start": "gatsby serve",
-    "deploy": "NODE_ENV=production gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "yarn build && pm2 pm2 restart 0",
+    "deploy-github": "NODE_ENV=production gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
