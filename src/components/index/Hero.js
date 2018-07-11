@@ -13,6 +13,23 @@ const HeroCol = styled(Col)`
 
 const HeroFluid = styled(Fluid)`
   padding-top: 8vh;
+
+  @media (max-width: 320px) {
+    padding-top: 13vh;
+  }
+
+  @media (max-width: 375px)
+  and (max-height: 667px) {
+    padding-top: 11vh;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 7vh;
+  }
+
+  @media (max-width: 1024px) {
+    padding-top: 5.5vh;
+  }
 `
 
 const HeroOverlay = HeroCol.extend`
@@ -26,6 +43,18 @@ const HeroSection = HeroCol.extend`
   margin-top: -75vh;
   background-color: ${COLOR.primaryFade};
   color: ${COLOR.fontPrimary};
+
+  @media (max-width: 360px) {
+    h3 {
+      margin: 0;
+    }
+    h4 {
+      font-size: 1.2em;
+    }
+    h5 {
+      font-size: 1em;
+    }
+  }
 `
 
 const HeaderHero = styled.h1`
@@ -48,11 +77,13 @@ const Hero = () => (
     <Row>
       <HeroOverlay />
       <HeroSection className={FLEX.center} >
-        <HeaderHero>Brown Bag</HeaderHero>
-        <SubHeaderHero>The Fourth</SubHeaderHero>
-        <Description>7 August 2018, 13.00 PM - 17.00 PM</Description>
-        <Description>SIT Building ( Train 1 - 5 ) , KMUTT</Description>
-        <h5 className='mt-4 text-center'>" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag The Fourth "</h5>
+        <HeaderHero>{"Brown Bag"}</HeaderHero>
+        <SubHeaderHero>{"The Fourth"}</SubHeaderHero>
+        <Description>{"7 August 2018, 13.00 PM - 17.00 PM"}</Description>
+        <Description>{"SIT Building ( Train 1 - 5 ) , KMUTT"}</Description>
+        <h5 className='mt-4 text-center'>
+          {`" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag The Fourth "`}
+        </h5>
         <Link to='/submit'>
           <Button>Submit Topic</Button>
         </Link>
