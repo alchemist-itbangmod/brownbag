@@ -1,6 +1,14 @@
-import React, { Fragment } from "react"
+import React, { Component, Fragment } from "react"
+import {
+  Nav as DefaultNav,
+  Navbar as DefaultNavbar,
+  NavItem as DefaultNavItem,
+  NavbarToggler,
+  Collapse
+} from "reactstrap"
+
 import styled from "styled-components"
-import { Nav as DefaultNav, NavItem } from "reactstrap"
+import LinkPage from "gatsby-link"
 import { Link as DefaultLink } from "react-scroll"
 
 import { COLOR, FONT_SIZE } from "../bases/constant"
@@ -13,18 +21,22 @@ const menus = [
   {name: "Sponsor", link: "sponsor"}
 ]
 
-const Nav = styled(DefaultNav)`
-  font-size: ${FONT_SIZE.normal};
-  color: ${COLOR.fontPrimary};
-  background-color: ${COLOR.primary};
+const Brand = styled(LinkPage)`
+  font-size: ${FONT_SIZE.large};
+  color: ${COLOR.fontPrimary} !important;
 `
 
-Nav.defaultProps = {
-  className: "sticky-top navbar-expand-lg py-2 px-3 justify-content-center"
+Brand.defaultProps = {
+  className: "navbar-brand",
+  to: "/"
 }
 
 const Link = styled(DefaultLink)`
   cursor: pointer;
+`
+
+const Toggler = styled(NavbarToggler)`
+    border-color: ${COLOR.fontPrimary};
 `
 
 Link.defaultProps = {
@@ -35,18 +47,17 @@ const NavList = ({ menus }) => (
   <Fragment>
     {
       menus.map(({name, link}) =>
-        <NavItem key={`nav-item-${name}-${link}`}>
+        <DefaultNavItem key={`nav-item-${name}-${link}`}>
           <Link
             to={link}
             activeClass='active'
             spy
             smooth
             duration={700}
-            // onSetActive={this.handleSetActive}
           >
             {name}
           </Link>
-        </NavItem>
+        </DefaultNavItem>
       )
     }
   </Fragment>
@@ -56,10 +67,38 @@ NavList.defaultProps = {
   menus
 }
 
-const Navbar = () => (
-  <Nav>
-    <NavList />
-  </Nav>
-)
+const Nav = styled(DefaultNav)`
+  font-size: ${FONT_SIZE.normal};
+  color: ${COLOR.fontPrimary};
+  background-color: ${COLOR.primary};
+`
 
-export default Navbar
+const Navbar = styled(DefaultNavbar)`
+  color: ${COLOR.fontPrimary};
+  background-color: ${COLOR.primary};
+`
+
+export default class CustomNavbar extends Component {
+  state = {
+    isOpen: false
+  }
+
+  toggle = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+  render () {
+    return (
+      <Navbar light expand='md' className='fixed-top'>
+        <Brand>BrownBag</Brand>
+        <Toggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav navbar>
+            <NavList />
+          </Nav>
+        </Collapse>
+      </Navbar>
+    )
+  }
+}
