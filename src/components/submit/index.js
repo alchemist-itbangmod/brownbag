@@ -60,7 +60,7 @@ export default class Submit extends Component {
         <SubmitSection className={`py-5 ${FLEX.center}`}>
           <Container>
             <Row className='py-5'>
-              { !user ? <Login login={this.login} /> : <SpeakerForm /> }
+              { !user ? <Login login={this.login} /> : <SpeakerForm logout={this.logout} /> }
             </Row>
           </Container>
         </SubmitSection>
