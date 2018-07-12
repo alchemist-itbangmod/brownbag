@@ -77,7 +77,7 @@ const SubmitForm = ({ topic, handleFields, submit }) => (
   <Form onSubmit={submit}>
     <FormGroup>
       <Label for='studentId'>
-        รหัสนักศึกษา <b>* </b>
+        รหัสนักศึกษา
       </Label>
       <Input
         id='studentId'
