@@ -1,6 +1,6 @@
 @font-face {
   font-family: "CSChatThai";
-  src: url("/static/fonts/CSChatThai.ttf");
+  src: url("../fonts/CSChatThai.ttf");
 }
 html, body {
   font-family: "CSChatThai", serif !important;
@@ -8,7 +8,7 @@ html, body {
   overflow-x: hidden;
 }
 body {
-  background: url('/static/images/IMG_3917.JPG');
+  background: url('../css/index.css');
   background-size: cover;
   background-attachment: fixed;
 }
