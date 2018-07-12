@@ -9,9 +9,12 @@ const Login = ({ login }) => (
     <CardImg width='100%' src='static/images/brownbag-last.gif' />
     <CardBody className='text-center' >
       <h2>To be a <b><u>Speaker</u></b>!</h2>
-      <h4>To Submit a Topic,<br />Please Login with Facebook.</h4>
+      <h5>
+        สำหรับผู้ที่สนใจเข้ามาร่วมแชร์ประสบการณ์ไปกับเราที่ Brown Bag 4.0 <br />
+        กรุณาลงทะเบียนด้วย Facebook :D
+      </h5>
       <FacebookButton onClick={login}>
-        Login with Facebook
+        ลงทะเบียนด้วย Facebook
       </FacebookButton>
       <h6>#brownbag #brownbag4</h6>
     </CardBody>
