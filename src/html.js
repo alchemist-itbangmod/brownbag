@@ -52,6 +52,7 @@ module.exports = class HTML extends React.Component {
           <meta property='og:image' content={ogImage} />
           <meta property='og:site_name' content={siteName} />
           <link href='https://fonts.googleapis.com/css?family=Kanit' rel='stylesheet' />
+          <link href='static/css/index.css' rel='stylesheet' />
           {this.props.headComponents}
           {css}
         </head>

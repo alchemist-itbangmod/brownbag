@@ -8,16 +8,11 @@ import {
   Card as DefaultCard
 } from "reactstrap"
 
-import injectGlobal from "./InjectGlobal"
 import { COLOR } from "./constant"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 export default class Layout extends Component {
-  componentWillMount = () => {
-    injectGlobal()
-  }
-
   render () {
     const { children } = this.props
     return (
