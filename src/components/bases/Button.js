@@ -36,7 +36,6 @@ const FacebookButton = styled.button`
   cursor: pointer;
   border: none;
   padding: 0.3em 1em;
-  border-radius: 8px;
   transition: .2s;
 
   &:hover {
