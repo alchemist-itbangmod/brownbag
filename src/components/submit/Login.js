@@ -12,7 +12,7 @@ const CardImg = styled(DefaultCardImg)`
 
 const Login = ({ login }) => (
   <CardSubmit>
-    <CardImg width='100%' src='static/images/brownbag-last.gif' />
+    <CardImg width='100%' src='/static/images/brownbag-last.gif' />
     <CardBody className='text-center' >
       <h2>To be a <b><u>Speaker</u></b>!</h2>
       <h5>
