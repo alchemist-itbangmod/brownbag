@@ -132,6 +132,12 @@ const SubmitForm = ({ topic, handleFields, submit }) => (
   </Form>
 )
 
+const Welcome = ({displayName}) => (
+  <Fragment>
+    <h3 className='text-center mt-4'>สวัสดีครับ, คุณ <b>{displayName}</b></h3>
+  </Fragment>
+)
+
 const Thanks = () => (
   <p className='text-center'>
     ขอบคุณที่ร่วมส่งต่อหัวข้อดีๆ ด้วยกัน<br />
@@ -140,12 +146,13 @@ const Thanks = () => (
   </p>
 )
 
-const SpeakerForm = ({ topic, handleFields, submit, logout }) => (
+const SpeakerForm = ({ user, topic, handleFields, submit, logout }) => (
   <CardSubmit>
     <CardImg src='static/images/IMG_3966.JPG' />
     <CardBody>
       <CardContent />
       <hr />
+      <Welcome displayName={user.displayName} />
       <SubmitForm topic={topic} handleFields={handleFields} submit={submit} />
       <Thanks />
       <LogoutButton onClick={logout}> ออกจากระบบ </LogoutButton>
