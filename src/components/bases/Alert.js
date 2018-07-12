@@ -24,7 +24,7 @@ const AlertPopUp = styled(DefaultAlert)`
   z-index: 100;
   width: 60%;
   color: ${COLOR.fontPrimary};
-  background-color: #00ad27;
+  background-color: ${({color}) => color === "success" ? "#00ad27" : "#700000"};
   @media (max-width: 800px) {
     width: 100%;
   }
@@ -34,20 +34,18 @@ AlertPopUp.defaultProps = {
   isOpen: true
 }
 
-const Alert = ({ children, isOpen }) => (
+const Alert = ({ children, isOpen, color }) => (
   <AlertWrapper
     isOpen={isOpen}
     className={`${FLEX.center} text-center`}
   >
-    <AlertPopUp>
+    <AlertPopUp
+      color={color}
+    >
       {children}
       {console.log(isOpen)}
     </AlertPopUp>
   </AlertWrapper>
 )
-
-Alert.PropTypes = {
-  isOpen: PropTypes.bool
-}
 
 export default Alert
