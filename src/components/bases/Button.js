@@ -35,6 +35,7 @@ const FacebookButton = styled.button`
   font-size: ${FONT_SIZE.mini};
   cursor: pointer;
   border: none;
+  width: 100%;
   padding: 0.3em 1em;
   transition: .2s;
 
