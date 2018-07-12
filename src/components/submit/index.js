@@ -8,6 +8,7 @@ import * as firebase from "../../tools/firebaseHelper"
 import Login from "./Login"
 import SpeakerForm from "./SpeakerForm"
 import Layout from "../bases/Layout"
+import Alert from "../bases/Alert"
 import { FONT_SIZE, FLEX, COLOR } from "../bases/constant"
 
 const SubmitSection = styled.div`
@@ -26,7 +27,8 @@ export default class Submit extends Component {
       topicName: "",
       description: "",
       telno: ""
-    }
+    },
+    isOpen: false
   }
   componentWillMount = () => {
     const user = windowChecker() && JSON.parse(window.localStorage.getItem("user"))
@@ -72,12 +74,23 @@ export default class Submit extends Component {
       displayName: user.displayName,
       photoURL: user.photoURL
     })
+    this.setState({
+      isOpen: true
+    })
+    setTimeout(() => {
+      this.setState({
+        isOpen: false
+      })
+    }, 1000)
   }
   render () {
-    const { user, topic } = this.state
+    const { user, topic, isOpen } = this.state
     return (
       <Layout>
         <SubmitSection className={`py-5 ${FLEX.center}`}>
+          <Alert isOpen={isOpen}>
+            ส่งข้อมูลสำเร็จ !
+          </Alert>
           <Container>
             <Row className='py-5'>
               {
