@@ -8,7 +8,7 @@ const getAll = () => db.ref(`${ref}`)
 
 const getOne = (attr, whereCause) => db.ref(`${ref}/${attr}/${whereCause}`)
 
-const insert = (uid, value) => db.ref(`${ref}/${uid}`).set({ ...value })
+const insert = (uid, value, cb) => db.ref(`${ref}/${uid}`).set({ ...value }, cb)
 
 const auth = firebase.auth
 

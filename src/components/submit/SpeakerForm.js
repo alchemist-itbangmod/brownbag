@@ -148,7 +148,7 @@ const Thanks = () => (
 
 const SpeakerForm = ({ user, topic, handleFields, submit, logout }) => (
   <CardSubmit>
-    <CardImg src='static/images/IMG_3966.JPG' />
+    <CardImg src='static/images/whatisbrownbag-last.gif' />
     <CardBody>
       <CardContent />
       <hr />
