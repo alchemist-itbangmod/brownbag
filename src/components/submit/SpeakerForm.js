@@ -139,8 +139,8 @@ const Thanks = () => (
   </p>
 )
 
-const SpeakerForm = ({ user, topic, handleFields, logout }) => (
-  <CardSubmit size={6} offset={3}>
+const SpeakerForm = ({ topic, handleFields, submit, logout }) => (
+  <CardSubmit>
     <CardImg src='static/images/IMG_3966.JPG' />
     <CardBody>
       <CardContent />

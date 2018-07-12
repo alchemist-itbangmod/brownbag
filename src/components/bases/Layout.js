@@ -52,7 +52,7 @@ const Card = styled(DefaultCard)`
 `
 
 const CardSubmit = ({ children, size, offset }) => (
-  <Col md={{ size, offset }}>
+  <Col md={{ size: 6, offset: 3 }}>
     <Card>
       {children}
     </Card>

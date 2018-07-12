@@ -5,7 +5,7 @@ import { CardSubmit } from "../bases/Layout"
 import { FacebookButton } from "../bases/Button"
 
 const Login = ({ login }) => (
-  <CardSubmit size={4} offset={4}>
+  <CardSubmit>
     <CardImg width='100%' src='static/images/brownbag-last.gif' />
     <CardBody className='text-center' >
       <h2>To be a <b><u>Speaker</u></b>!</h2>
