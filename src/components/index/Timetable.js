@@ -60,7 +60,7 @@ SessionList.defaultProps = {
 }
 
 const TimetableContainer = styled(Fluid)`
-  background-image: url('static/images/IMG_3952.JPG');
+  background-image: url('/static/images/IMG_3952.JPG');
   background-attachment: fixed;
   background-size: cover;
   background-position: top left;

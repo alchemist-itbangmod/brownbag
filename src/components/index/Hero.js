@@ -35,7 +35,7 @@ const HeroFluid = styled(Fluid)`
 `
 
 const HeroOverlay = HeroCol.extend`
-  background-image: url("static/images/IMG_3966.JPG");
+  background-image: url("/static/images/IMG_3966.JPG");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;

@@ -42,7 +42,7 @@ const What = () => (
           <WhatHeader>What is Brown Bag?</WhatHeader>
         </Col>
         <Col lg='6'>
-          <SectionImage src='static/images/brownbag-last.gif' />
+          <SectionImage src='/static/images/brownbag-last.gif' />
         </Col>
         <WhatCol lg='6'>
           <p>
@@ -74,7 +74,7 @@ const About = () => (
           </p>
         </Col>
         <Col md={6}>
-          <SectionImage src='static/images/whatisbrownbag-last.gif' />
+          <SectionImage src='/static/images/whatisbrownbag-last.gif' />
         </Col>
       </Element>
     </Container>
@@ -82,10 +82,10 @@ const About = () => (
 )
 
 const images = [
-  "static/images/IMG_3952.JPG",
-  "static/images/IMG_3918.JPG",
-  "static/images/IMG_3935.JPG",
-  "static/images/IMG_3967.JPG"
+  "/static/images/IMG_3952.JPG",
+  "/static/images/IMG_3918.JPG",
+  "/static/images/IMG_3935.JPG",
+  "/static/images/IMG_3967.JPG"
 ]
 
 const ImageList = ({ images }) => (

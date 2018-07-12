@@ -7,8 +7,8 @@ import { COLOR, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
 
 const sponsors = [
-  "static/images/kmutt.svg",
-  "static/images/sit.svg"
+  "/static/images/kmutt.svg",
+  "/static/images/sit.svg"
 ]
 
 const Image = styled.img`

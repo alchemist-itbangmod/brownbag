@@ -38,14 +38,14 @@ const Footer = () => (
           <h6>Event Organizer by</h6>
           <Logo
             href='https://www.facebook.com/alchemistitbangmod/'
-            src='static/images/alchemist.png'
+            src='/static/images/alchemist.png'
           />
         </FooterCol>
         <FooterCol>
           <h5>CONNECT WITH US</h5>
           <Logo
             href='https://www.facebook.com/BrownBagSITKMUTT/'
-            src='static/images/fbicon.png'
+            src='/static/images/fbicon.png'
           />
           <br />
           <a href='mailto:alchemist@sit.kmutt.ac.th'>alchemist@sit.kmutt.ac.th</a>
