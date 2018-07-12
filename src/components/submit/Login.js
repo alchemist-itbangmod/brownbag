@@ -1,8 +1,14 @@
 import React from "react"
-import { CardBody, CardImg } from "reactstrap"
+import styled from "styled-components"
+import { CardBody, CardImg as DefaultCardImg } from "reactstrap"
 
 import { CardSubmit } from "../bases/Layout"
 import { FacebookButton } from "../bases/Button"
+
+const CardImg = styled(DefaultCardImg)`
+  width: 55%;
+  margin: 0 auto;
+`
 
 const Login = ({ login }) => (
   <CardSubmit>
