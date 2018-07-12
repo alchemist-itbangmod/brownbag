@@ -22,6 +22,10 @@ const CardBody = styled(DefaultCardbody)`
   p, ol {
     text-indent: 0;
     font-size: ${FONT_SIZE.mini};
+
+    a {
+      color: #007bff;
+    }
   }
   ol {
     padding: 0 1em;
@@ -41,16 +45,17 @@ const CardBody = styled(DefaultCardbody)`
 
 const CardContent = () => (
   <Fragment>
+    <h3><b>Brown Bag 4.0</b></h3>
     <p>
-      <b>Brown Bag The Fourth</b> เป็นงานสัมมนาเล็กๆของเด็กไอทีบางมด ซึ่งในครั้งนี้เปิดโอกาสให้กับทุกๆคนได้
+      เป็นงานสัมมนาเล็กๆของเด็กไอทีบางมด ซึ่งในครั้งนี้เปิดโอกาสให้กับทุกๆคนได้
       เข้ามาแชร์ประสบการณ์ให้กับน้องๆ ว่าที่นักศึกษา SIT กันนะครับ..
     </p>
     <p>
       โดยที่งาน Brown Bag ของพวกเรามีเอกลักษณ์เล็กน้อยว่า <br />
-      <blockquote className='blockquote'>
-        "<u> ผู้เข้าร่วมงานรวมถึง Speaker ทุกท่านจะต้องเตรียมขนมมาเพื่อแลกเปลี่ยนกันภายในงานคนละ 1 ชิ้น :) </u>"
-      </blockquote>
     </p>
+    <blockquote className='blockquote'>
+      "<u> ผู้เข้าร่วมงานรวมถึง Speaker ทุกท่านจะต้องเตรียมขนมมาเพื่อแลกเปลี่ยนกันภายในงานคนละ 1 ชิ้น :) </u>"
+    </blockquote>
     <h5>
       <b>ข้อกำหนดของงาน :</b>
     </h5>
@@ -60,6 +65,7 @@ const CardContent = () => (
       <li> ห้ามนำเสนอเนื้อหาที่พาดพิง เสียดสี สถาบันชาติ ศาสนา และพระมหากษัตริย์</li>
       <li> ใช้ห้องเรียน Train 1 - 5 สามารถต่อ Projector ได้ด้วยสาย VGA</li>
     </ol>
+    <hr />
     <p>
       <b>วันที่ 7 สิงหาคม 2561 เวลา 13.00 เป็นต้นไป</b> <br />
       <b>ณ อาคารเทคโนโลยีสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี.</b>
@@ -67,23 +73,40 @@ const CardContent = () => (
   </Fragment>
 )
 
-const SubmitForm = () => (
-  <Form>
+const SubmitForm = ({ topic, handleFields, submit }) => (
+  <Form onSubmit={submit}>
+    <FormGroup>
+      <Label for='studentId'>
+        รหัสนักศึกษา <b>* </b>
+      </Label>
+      <Input
+        id='studentId'
+        pattern='[0-9]'
+        value={topic.studentId}
+        onChange={e => handleFields("topic", { ...topic, studentId: e.target.value })}
+      />
+    </FormGroup>
     <FormGroup>
       <Label for='topic'>
         ชื่อหัวข้อที่ต้องการพูดภายในงาน <b>* </b>
         <span>มีเวลาในการพูดทั้งหมด 30 นาที</span>
       </Label>
-      <Input id='topic' required />
+      <Input
+        id='topic'
+        value={topic.topicName}
+        onChange={e => handleFields("topic", { ...topic, topicName: e.target.value })}
+        required
+      />
     </FormGroup>
     <FormGroup>
       <Label for='description'>
         กรุณาอธิบายสั้นๆเกี่ยวกับหัวข้อที่คุณต้องการจะแชร์ <b>* </b>
       </Label>
       <Input
-        type='textarea'
-        name='text'
         id='description'
+        type='textarea'
+        value={topic.description}
+        onChange={e => handleFields("topic", { ...topic, description: e.target.value })}
         required
       />
     </FormGroup>
@@ -95,30 +118,34 @@ const SubmitForm = () => (
       <Input
         id='telno'
         pattern='^[0]{1}[0-9]{9}'
-        placeholder={"099-123-4455"}
+        placeholder={"0991234455"}
+        value={topic.telno}
+        onChange={e => handleFields("topic", { ...topic, telno: e.target.value })}
         required
       />
     </FormGroup>
-    <FormGroup>
-      <SubmitButton type='submit'>ส่งหัวข้อ</SubmitButton>
-    </FormGroup>
+    {
+      <FormGroup>
+        <SubmitButton type='submit'>ส่งหัวข้อ</SubmitButton>
+      </FormGroup>
+    }
   </Form>
 )
 
 const Thanks = () => (
-  <p>
-    ขอบคุณที่ร่วมส่งต่อหัวข้อดีๆ ด้วยกัน :) <br />
-    หากมีข้อสงสัยสอบถามในแฟนเพจได้เลย แล้วเจอกันวันที่ 7 สิงหาครับ
+  <p className='text-center'>
+    ขอบคุณที่ร่วมส่งต่อหัวข้อดีๆ ด้วยกัน<br />
+    หากมีข้อสงสัยสอบถามใน <a href='https://www.facebook.com/BrownBagSITKMUTT/'>แฟนเพจ</a> ได้เลย แล้วเจอกันวันที่ 7 สิงหา นะครับ
   </p>
 )
 
-const SpeakerForm = ({ logout }) => (
+const SpeakerForm = ({ user, topic, handleFields, logout }) => (
   <CardSubmit size={6} offset={3}>
     <CardImg src='static/images/IMG_3966.JPG' />
     <CardBody>
       <CardContent />
       <hr />
-      <SubmitForm />
+      <SubmitForm topic={topic} handleFields={handleFields} />
       <Thanks />
       <LogoutButton onClick={logout}> ออกจากระบบ </LogoutButton>
     </CardBody>
