@@ -78,6 +78,7 @@ const SubmitForm = ({ topic, handleFields, submit }) => (
     <FormGroup>
       <Label for='studentId'>
         รหัสนักศึกษา
+        <span> (เฉพาะรหัส 60 ขึ้นไป)</span>
       </Label>
       <Input
         id='studentId'
