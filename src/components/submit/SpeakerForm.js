@@ -77,8 +77,8 @@ const SubmitForm = ({ topic, handleFields, submit }) => (
   <Form onSubmit={submit}>
     <FormGroup>
       <Label for='studentId'>
-        รหัสนักศึกษา
-        <span> (เฉพาะรหัส 60 ขึ้นไป)</span>
+        รหัสนักศึกษา 
+        <span>(เฉพาะรหัส 60 ขึ้นไป)</span>
       </Label>
       <Input
         id='studentId'
