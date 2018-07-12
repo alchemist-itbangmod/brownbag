@@ -43,7 +43,6 @@ const Alert = ({ children, isOpen, color }) => (
       color={color}
     >
       {children}
-      {console.log(isOpen)}
     </AlertPopUp>
   </AlertWrapper>
 )
