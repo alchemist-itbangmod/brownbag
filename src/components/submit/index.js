@@ -28,7 +28,8 @@ export default class Submit extends Component {
       description: "",
       telno: ""
     },
-    isOpen: false
+    isOpen: false,
+    message: ""
   }
   componentWillMount = () => {
     const user = windowChecker() && JSON.parse(window.localStorage.getItem("user"))
@@ -73,23 +74,34 @@ export default class Submit extends Component {
       ...topic,
       displayName: user.displayName,
       photoURL: user.photoURL
+    }, (error) => {
+      if (error) {
+        this.setState({
+          isOpen: true,
+          message: "ส่งข้อมูลไม่สำเร็จ กรุณาติดต่อที่แฟนเพจ เพื่อแจ้งปัญหา",
+          color: "danger"
+        })
+      } else {
+        this.setState({
+          isOpen: true,
+          message: "ส่งข้อมูลสำเร็จ",
+          color: "success"
+        })
+      }
+      setTimeout(() => {
+        this.setState({
+          isOpen: false
+        })
+      }, 1700)
     })
-    this.setState({
-      isOpen: true
-    })
-    setTimeout(() => {
-      this.setState({
-        isOpen: false
-      })
-    }, 1000)
   }
   render () {
-    const { user, topic, isOpen } = this.state
+    const { user, topic, isOpen, message, color } = this.state
     return (
       <Layout>
         <SubmitSection className={`py-5 ${FLEX.center}`}>
-          <Alert isOpen={isOpen}>
-            ส่งข้อมูลสำเร็จ !
+          <Alert isOpen={isOpen} color={color}>
+            {message}
           </Alert>
           <Container>
             <Row className='py-5'>
