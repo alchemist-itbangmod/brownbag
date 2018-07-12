@@ -1,18 +1,24 @@
 import firebase from "../credentials/firebase"
 
-const ref = {
-  create: () => firebase.database().ref(),
-  update: () => firebase.database().ref(),
-  read: () => firebase.database().ref(),
-  delete: () => firebase.database().ref()
-}
+const ref = "brownbag4"
+
+const db = firebase.database()
+
+const getAll = () => db.ref(`${ref}`)
+
+const getOne = (attr, whereCause) => db.ref(`${ref}/${attr}/${whereCause}`)
+
+const insert = (uid, value) => db.ref(`${ref}/${uid}`).set({ ...value })
 
 const auth = firebase.auth
 
 const provider = new firebase.auth.FacebookAuthProvider()
 
 export {
-  ref,
+  db,
+  getAll,
+  getOne,
+  insert,
   auth,
   provider
 }

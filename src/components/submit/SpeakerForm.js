@@ -81,7 +81,7 @@ const SubmitForm = ({ topic, handleFields, submit }) => (
       </Label>
       <Input
         id='studentId'
-        pattern='[0-9]'
+        pattern='^[0-9]{11}'
         value={topic.studentId}
         onChange={e => handleFields("topic", { ...topic, studentId: e.target.value })}
       />
@@ -126,7 +126,7 @@ const SubmitForm = ({ topic, handleFields, submit }) => (
     </FormGroup>
     {
       <FormGroup>
-        <SubmitButton type='submit'>ส่งหัวข้อ</SubmitButton>
+        <SubmitButton type='submit'>{ !(topic !== "" && topic.displayName) ? "ส่งหัวข้อ" : "แก้ไขข้อมูล"}</SubmitButton>
       </FormGroup>
     }
   </Form>
@@ -146,7 +146,7 @@ const SpeakerForm = ({ topic, handleFields, submit, logout }) => (
     <CardBody>
       <CardContent />
       <hr />
-      <SubmitForm topic={topic} handleFields={handleFields} />
+      <SubmitForm topic={topic} handleFields={handleFields} submit={submit} />
       <Thanks />
       <LogoutButton onClick={logout}> ออกจากระบบ </LogoutButton>
     </CardBody>
