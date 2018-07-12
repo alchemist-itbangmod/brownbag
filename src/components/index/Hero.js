@@ -77,12 +77,11 @@ const Hero = () => (
     <Row>
       <HeroOverlay />
       <HeroSection className={FLEX.center} >
-        <HeaderHero>{"Brown Bag"}</HeaderHero>
-        <SubHeaderHero>{"The Fourth"}</SubHeaderHero>
+        <HeaderHero>{"Brown Bag 4.0"}</HeaderHero>
         <Description>{"7 August 2018, 13.00 PM - 17.00 PM"}</Description>
         <Description>{"SIT Building ( Train 1 - 5 ) , KMUTT"}</Description>
         <h5 className='mt-4 text-center'>
-          {`" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag The Fourth "`}
+          {`" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag 4.0 "`}
         </h5>
         <Link to='/submit'>
           <Button>Submit Topic</Button>

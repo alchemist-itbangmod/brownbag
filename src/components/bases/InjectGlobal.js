@@ -1,5 +1,5 @@
 import { injectGlobal } from "styled-components"
-import { FONT_SIZE, COLOR } from "../bases/constant"
+import { FONT_SIZE, COLOR } from "./constant"
 
 export default () => injectGlobal`
   @font-face {
@@ -10,6 +10,11 @@ export default () => injectGlobal`
     font-family: "CSChatThai", serif !important;
     font-size: 18px;
     overflow-x: hidden;
+  }
+  body {
+    background: url('static/images/IMG_3917.JPG');
+    background-size: cover;
+    background-attachment: fixed;
   }
 
   h1 {

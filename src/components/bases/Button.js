@@ -1,7 +1,7 @@
 import { Button } from "reactstrap"
 import styled from "styled-components"
 
-import { FONT_SIZE, COLOR, MARGIN } from "./constant"
+import { FONT_SIZE, COLOR, MARGIN, PADDING } from "./constant"
 
 const ButtonPrimary = styled(Button)`
   border-radius: 0px;
@@ -29,7 +29,39 @@ const ButtonPrimaryInverted = styled(ButtonPrimary)`
   border: 3px solid ${COLOR.highlight} !important;
 `
 
+const FacebookButton = styled.button`
+  background-color: ${COLOR.facebook};
+  color: ${COLOR.fontPrimary};
+  font-size: ${FONT_SIZE.mini};
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  padding: 0.3em 1em;
+  transition: .2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1.05);
+  }
+`
+
+const SubmitButton = styled(ButtonPrimaryInverted)`
+  font-size: ${FONT_SIZE.mini};
+  margin: 1em 0;
+`
+
+const LogoutButton = styled(ButtonPrimary)`
+  font-size: ${FONT_SIZE.mini};
+  width: 100%;
+  margin: 0;
+`
+
 export default ButtonPrimary
 export {
-  ButtonPrimaryInverted
+  ButtonPrimaryInverted,
+  FacebookButton,
+  SubmitButton,
+  LogoutButton
 }

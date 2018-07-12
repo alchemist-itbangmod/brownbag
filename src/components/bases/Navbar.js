@@ -9,9 +9,9 @@ import {
 
 import styled from "styled-components"
 import LinkPage from "gatsby-link"
-import { Link as DefaultLink } from "react-scroll"
+import { Link as DefaultLink } from "react-scroll/modules"
 
-import { COLOR, FONT_SIZE } from "../bases/constant"
+import { COLOR, FONT_SIZE } from "./constant"
 
 const menus = [
   {name: "What's", link: "whatis"},
