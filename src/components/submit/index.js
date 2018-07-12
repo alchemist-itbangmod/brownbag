@@ -34,9 +34,8 @@ export default class Submit extends Component {
       this.setState({ user })
       firebase.getOne("topics", `${user.uid}`).once("value")
         .then(topicSnapshot => {
-          this.setState({
-            topic: topicSnapshot.val()
-          })
+          let topic = Object.assign({studentId: ""}, topicSnapshot.val())
+          this.setState({ topic })
         })
     }
   }
