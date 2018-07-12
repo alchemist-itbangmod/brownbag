@@ -32,7 +32,7 @@ const Footer = () => (
       <Row className='d-flex justify-content-between'>
         <FooterCol>
           <h4>Brown Bag</h4>
-          <h6>The Fourth</h6>
+          <h6>4.0</h6>
         </FooterCol>
         <FooterCol>
           <h6>Event Organizer by</h6>
