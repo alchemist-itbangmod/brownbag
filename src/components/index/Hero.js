@@ -14,22 +14,24 @@ const HeroCol = styled(Col)`
 const HeroFluid = styled(Fluid)`
   padding-top: 8vh;
 
-  @media (max-width: 320px) {
-    padding-top: 13vh;
-  }
-
-  @media (max-width: 375px)
-  and (max-height: 667px) {
-    padding-top: 11vh;
+  @media (max-width: 1024px) {
+    padding-top: 5.5vh;
   }
 
   @media (max-width: 768px) {
     padding-top: 7vh;
   }
 
-  @media (max-width: 1024px) {
-    padding-top: 5.5vh;
+  @media (max-width: 375px)
+  and (max-height: 667px) {
+    padding-top: 11vh;
   }
+  
+  @media (max-width: 320px) {
+    padding-top: 13vh;
+  }
+
+
 `
 
 const HeroOverlay = HeroCol.extend`

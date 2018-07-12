@@ -11,10 +11,10 @@ const Login = ({ login }) => (
       <h2>To be a <b><u>Speaker</u></b>!</h2>
       <h5>
         สำหรับผู้ที่สนใจเข้ามาร่วมแชร์ประสบการณ์ไปกับเราที่ Brown Bag 4.0 <br />
-        <b>กรุณาลงทะเบียนด้วย Facebook</b>
+        <b>กรุณาเข้าสู่ระบบด้วย Facebook</b>
       </h5>
       <FacebookButton onClick={login}>
-        ลงทะเบียนด้วย Facebook
+        เข้าสู่ระบบด้วย Facebook
       </FacebookButton>
       <h6><b>#brownbag #brownbag4</b></h6>
     </CardBody>

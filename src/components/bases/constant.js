@@ -15,6 +15,7 @@ const FONT_SIZE = {
 const COLOR = {
   primary: "rgb(74,44,44)",
   primaryFade: "rgba(74, 44, 44, 0.65)",
+  primaryLighter: "rgb(111, 81, 81)",
   secondary: "#ffdc76",
   normal: "#fff0b6",
   highlight: "#d3504a",

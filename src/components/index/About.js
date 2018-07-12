@@ -1,8 +1,8 @@
 import React, { Fragment } from "react"
 import styled from "styled-components"
-import { Container } from "reactstrap"
+import { Container, Row } from "reactstrap"
 import { Element } from "react-scroll"
-import Link from 'gatsby-link'
+import Link from "gatsby-link"
 
 import { COLOR, FONT_SIZE, MARGIN, FLEX } from "../bases/constant"
 import { Fluid, Col } from "../bases/Layout"
@@ -81,10 +81,34 @@ const About = () => (
   </Fluid>
 )
 
+const images = [
+  "static/images/IMG_3952.JPG",
+  "static/images/IMG_3918.JPG",
+  "static/images/IMG_3935.JPG",
+  "static/images/IMG_3967.JPG"
+]
+
+const ImageList = ({ images }) => (
+  <Fragment>
+    {
+      images.map(image => (
+        <Col key={image} xs={6} md={3} className='p-0 m-0'>
+          <SectionImage src={image} />
+        </Col>
+      ))
+    }
+  </Fragment>
+)
+
+ImageList.defaultProps = {
+  images
+}
+
 const Style = () => (
   <Fluid
     bgcolor={COLOR.primary}
     color={COLOR.fontPrimary}
+    className='p-0'
   >
     <Container>
       <Element className='row py-5' name='joinwithus'>
@@ -97,6 +121,11 @@ const Style = () => (
           </p>
         </Col>
       </Element>
+    </Container>
+    <Container fluid>
+      <Row>
+        <ImageList />
+      </Row>
     </Container>
   </Fluid>
 )
