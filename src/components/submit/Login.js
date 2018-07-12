@@ -11,12 +11,12 @@ const Login = ({ login }) => (
       <h2>To be a <b><u>Speaker</u></b>!</h2>
       <h5>
         สำหรับผู้ที่สนใจเข้ามาร่วมแชร์ประสบการณ์ไปกับเราที่ Brown Bag 4.0 <br />
-        กรุณาลงทะเบียนด้วย Facebook :D
+        <b>กรุณาลงทะเบียนด้วย Facebook</b>
       </h5>
       <FacebookButton onClick={login}>
         ลงทะเบียนด้วย Facebook
       </FacebookButton>
-      <h6>#brownbag #brownbag4</h6>
+      <h6><b>#brownbag #brownbag4</b></h6>
     </CardBody>
   </CardSubmit>
 )

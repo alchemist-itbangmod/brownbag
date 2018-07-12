@@ -135,7 +135,8 @@ const SubmitForm = ({ topic, handleFields, submit }) => (
 const Thanks = () => (
   <p className='text-center'>
     ขอบคุณที่ร่วมส่งต่อหัวข้อดีๆ ด้วยกัน<br />
-    หากมีข้อสงสัยสอบถามใน <a href='https://www.facebook.com/BrownBagSITKMUTT/'>แฟนเพจ</a> ได้เลย แล้วเจอกันวันที่ 7 สิงหา นะครับ
+    หากมีข้อสงสัยสอบถามใน <a href='https://www.facebook.com/BrownBagSITKMUTT/'>แฟนเพจ</a> ได้เลย<br />
+    แล้วเจอกันวันที่ 7 สิงหา นะครับ
   </p>
 )
 
