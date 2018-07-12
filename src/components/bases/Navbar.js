@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import {
   Nav as DefaultNav,
   Navbar as DefaultNavbar,
-  NavItem,
+  NavItem as DefaultNavItem,
   NavbarToggler,
   Collapse
 } from "reactstrap"
@@ -41,6 +41,17 @@ const Toggler = styled(NavbarToggler)`
 
 Link.defaultProps = {
   className: "mx-3"
+}
+
+const NavItem = styled(DefaultNavItem)`
+  cursor: pointer;
+  @media (max-width: 1024px) {
+    background-color: ${COLOR.primaryLighter};
+  }
+`
+
+NavItem.defaultProps = {
+  className: "my-1"
 }
 
 const NavList = ({ menus }) => (
