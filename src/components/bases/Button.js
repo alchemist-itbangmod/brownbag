@@ -47,8 +47,21 @@ const FacebookButton = styled.button`
   }
 `
 
+const SubmitButton = styled(ButtonPrimaryInverted)`
+  font-size: ${FONT_SIZE.mini};
+  margin: 1em 0;
+`
+
+const LogoutButton = styled(ButtonPrimary)`
+  font-size: ${FONT_SIZE.mini};
+  width: 100%;
+  margin: 0;
+`
+
 export default ButtonPrimary
 export {
   ButtonPrimaryInverted,
-  FacebookButton
+  FacebookButton,
+  SubmitButton,
+  LogoutButton
 }
