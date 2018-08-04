@@ -58,9 +58,8 @@ export default class Topic extends Component {
   }
 
   fetchTopic = () => {
-    firebase.getAll("topics").once("value").then(async topicSnapshot => {
-      const topics = await Object.values(topicSnapshot.val())
-      console.log(topics)
+    firebase.getAll("topics").once("value").then(topicSnapshot => {
+      const topics = Object.values(topicSnapshot.val())
       this.setState({ topics })
     })
   }
