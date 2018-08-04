@@ -12,7 +12,7 @@ const HeroCol = styled(Col)`
 `
 
 const HeroFluid = styled(Fluid)`
-  padding-top: 8vh;
+  padding-top: 7.3vh;
 
   @media (max-width: 1024px) {
     padding-top: 5.5vh;
@@ -83,11 +83,16 @@ const Hero = () => (
         <Description>{"7 August 2018, 13.00 PM - 17.00 PM"}</Description>
         <Description>{"SIT Building ( Train 1 - 5 ) , KMUTT"}</Description>
         <h5 className='mt-4 text-center'>
-          {`" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag 4.0 "`}
+          {"\" ไม่ว่าคุณจะรู้จักไอทีหรือไม่ มาร่วมแบ่งขนม ผสมความรู้กันใน Brown Bag 4.0 \""}
         </h5>
-        <Link to='/submit'>
-          <Button>Submit Topic</Button>
-        </Link>
+        <div>
+          <Link to='/submit'>
+            <Button>Submit Topic</Button>
+          </Link>
+          <Link to='/topics'>
+            <Button>All Topics</Button>
+          </Link>
+        </div>
       </HeroSection>
     </Row>
   </HeroFluid>

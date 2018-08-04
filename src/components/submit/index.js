@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import styled from "styled-components"
 import { Container, Row } from "reactstrap"
 
 import windowChecker from "../../tools/windowChecker"
@@ -7,17 +6,9 @@ import * as firebase from "../../tools/firebaseHelper"
 
 import Login from "./Login"
 import SpeakerForm from "./SpeakerForm"
-import Layout from "../bases/Layout"
+import Layout, { SubmitSection } from "../bases/Layout"
 import Alert from "../bases/Alert"
-import { FONT_SIZE, FLEX, COLOR } from "../bases/constant"
-
-const SubmitSection = styled.div`
-  font-size: ${FONT_SIZE.hero};
-  background: ${COLOR.primaryFade};
-  color: ${COLOR.fontPrimary};
-  min-height: 85vh;
-
-`
+import { FLEX } from "../bases/constant"
 
 export default class Submit extends Component {
   state = {
