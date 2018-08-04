@@ -65,7 +65,7 @@ export default class Topic extends Component {
     })
   }
 
-  componentDidMount = async () => {
+  componentDidMount = () => {
     this.fetchTopic()
   }
 
