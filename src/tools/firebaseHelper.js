@@ -4,7 +4,12 @@ const ref = "brownbag4"
 
 const db = firebase.database()
 
-const getAll = () => db.ref(`${ref}`)
+const getAll = (collection) => {
+  if (collection) {
+    return db.ref(`${ref}/${collection}`)
+  }
+  return db.ref(`${ref}`)
+}
 
 const getOne = (attr, whereCause) => db.ref(`${ref}/${attr}/${whereCause}`)
 
