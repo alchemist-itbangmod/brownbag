@@ -8,7 +8,7 @@ import {
   Card as DefaultCard
 } from "reactstrap"
 
-import { COLOR } from "./constant"
+import { FONT_SIZE, COLOR } from "./constant"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
@@ -46,13 +46,21 @@ const Card = styled(DefaultCard)`
   color: ${COLOR.highlight};
 `
 
-const CardSubmit = ({ children, size, offset }) => (
-  <Col md={{ size: 6, offset: 3 }}>
+const CardSubmit = ({ children, size, offset, ...props }) => (
+  <Col md={{ size: 6, offset: 3 }} {...props}>
     <Card>
       {children}
     </Card>
   </Col>
 )
+
+export const SubmitSection = styled.div`
+  font-size: ${FONT_SIZE.hero};
+  background: ${COLOR.primaryFade};
+  color: ${COLOR.fontPrimary};
+  min-height: 85vh;
+
+`
 
 export {
   Fluid,
